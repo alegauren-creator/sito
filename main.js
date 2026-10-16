@@ -1,4 +1,8 @@
 document.getElementById('thoughts').innerHTML=PENSIERI.map(t=>`<blockquote class="card reveal quote">“${t}”<cite>— Alessio Gaetano</cite></blockquote>`).join('');
+document.getElementById('poems').innerHTML=POESIE.map(p=>{
+  const st=p.stanzas.map(lines=>`<div class="stanza reveal">${lines.map(l=>`<p>${l}</p>`).join('')}</div>`).join('');
+  return `<article class="card poem reveal"><h3 class="poem-title">${p.title}</h3><cite class="poem-author">— ${p.author||'Alessio Gaetano'}</cite>${st}</article>`;
+}).join('');
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 const L=document.querySelector('.leaves'),C=['#f7c6d9','#c9b8f0','#a8e0d0','#ffe1a8','#b8d8f5'];
