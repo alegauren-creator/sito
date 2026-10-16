@@ -36,7 +36,7 @@ def page(L):
 <title>{E(t['title'])}</title><meta name="description" content="{E(t['desc'])}">
 <link rel="canonical" href="{url}">{alt}<link rel="icon" href="{R}favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:title" content="Alessio Gaetano – {E(t['sub'])}"><meta property="og:description" content="{E(t['ogdesc'])}"><meta property="og:image" content="{SITE}og.jpg"><meta property="og:locale" content="{dict(it='it_IT',en='en_US',fr='fr_FR',ar='ar_AR')[L]}"><meta name="twitter:card" content="summary_large_image">
-<!-- google-site-verification: incolla qui il meta tag di Google Search Console -->
+<meta name="google-site-verification" content="P_0KU-tFi58tV74n-cSzLczwnLbSxpIiYvnmhs9SNok" />
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ws,ensure_ascii=False)}</script>
 <link rel="stylesheet" href="{R}fonts/fonts.css"><link rel="stylesheet" href="{R}style.css?v=7">
 <script>window.SITE_BASE="{R}";window.SITE_LANG="{L}";</script></head><body>
