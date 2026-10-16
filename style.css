@@ -10,7 +10,7 @@ nav.solid{background:rgba(244,237,225,.92);backdrop-filter:blur(12px);padding:.7
 .links a:after{content:"";position:absolute;left:0;right:100%;bottom:-4px;height:1px;background:var(--aqua);transition:right .35s}.links a:hover:after{right:0}
 #menu{display:none;background:none;border:0;font-size:1.6rem;color:inherit;cursor:pointer}
 .hero{position:relative;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1.5rem 4rem;color:#fff;overflow:hidden}
-.hero-bg{position:absolute;inset:-4%;background:url(img/hero.jpg) center 45%/cover;animation:kb 28s ease-in-out infinite alternate;z-index:-2}
+.hero-bg{position:absolute;inset:-4%;background:url(img/hero.jpg?v=2) center 40%/cover;animation:kb 28s ease-in-out infinite alternate;z-index:-2}
 .hero:before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(8,36,44,.55),rgba(11,47,56,.35) 45%,rgba(11,47,56,.85))}
 @keyframes kb{to{transform:scale(1.08) translateY(-1.5%)}}
 .hero h1{font-size:clamp(3rem,9vw,6.2rem);margin:0;font-weight:500;text-shadow:0 2px 30px rgba(0,0,0,.25)}
