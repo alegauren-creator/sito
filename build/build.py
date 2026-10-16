@@ -10,7 +10,7 @@ IDS=['chi','foto','video','poesie','pensieri','lavoro','inizia','contatti']
 def page(L):
   t=C.T[L];R='' if L=='it' else '../';url=SITE+t['path']
   alt=''.join(f'<link rel="alternate" hreflang="{l}" href="{SITE+C.T[l]["path"]}">' for l in LANGS)+f'<link rel="alternate" hreflang="x-default" href="{SITE}">'
-  ld={"@context":"https://schema.org","@type":"Person","name":"Alessio Gaetano","jobTitle":t['job'],"url":url,"image":SITE+"og.jpg","email":"mailto:aleg.auren@gmail.com","sameAs":["https://www.tiktok.com/@a_g.auren","https://ko-fi.com/alessio_g"],"knowsLanguage":["it","en","fr"]}
+  ld={"@context":"https://schema.org","@type":"Person","name":"Alessio Gaetano","jobTitle":t['job'],"url":url,"image":SITE+"og.jpg","email":"mailto:aleg.auren@gmail.com","sameAs":["https://www.tiktok.com/@a_g.auren","https://ko-fi.com/alessio_g","https://linktr.ee/ale.ptdc"],"knowsLanguage":["it","en","fr"]}
   ws={"@context":"https://schema.org","@type":"WebSite","name":"Alessio Gaetano – "+t['sub'],"url":url,"inLanguage":L}
   langsw=''.join(f'<a href="{R}{C.T[l]["path"]}" hreflang="{l}" lang="{l}" data-lang="{l}"{" aria-current=\"true\"" if l==L else ""}>{C.T[l]["short"]}</a>' for l in LANGS)
   nav=''.join(f'<a href="#{i}">{E(n)}</a>' for i,n in zip(IDS,t['nav']))
@@ -48,7 +48,7 @@ def page(L):
 <section id="video"><h2 class="reveal">{E(t['h_video'])}</h2><p class="intro reveal">{E(t['video_intro'])}</p><div class="videos">{vids}</div><p class="note small reveal">{E(t['video_note'])}</p></section>
 <section id="poesie"><h2 class="reveal">{E(t['h_poesie'])}</h2>{poems}</section>
 <section id="pensieri"><h2 class="reveal">{E(t['h_pensieri'])}</h2>{week}<div class="grid2">{thoughts}</div></section>
-<section id="libri"><h2 class="reveal">{E(t['h_libri'])}</h2><div class="card reveal book"><h3>{E(t['book_t'])}</h3><p>{E(t['book_d'])}</p><p><a class="btn" href="https://ko-fi.com/alessio_g" target="_blank" rel="noopener">{E(t['kofi'])}</a> <a class="btn ghost" href="https://www.tiktok.com/@a_g.auren" target="_blank" rel="noopener">{E(t['tiktok_follow'])}</a></p><p class="note">{E(t['more_books'])}</p></div></section>
+<section id="libri"><h2 class="reveal">{E(t['h_libri'])}</h2><div class="card reveal book"><h3>{E(t['book_t'])}</h3><p>{E(t['book_d'])}</p><p><a class="btn" href="https://ko-fi.com/alessio_g" target="_blank" rel="noopener">{E(t['kofi'])}</a> <a class="btn ghost" href="https://www.tiktok.com/@a_g.auren" target="_blank" rel="noopener">{E(t['tiktok_follow'])}</a></p><p><a class="btn ghost" href="https://linktr.ee/ale.ptdc" target="_blank" rel="noopener">{E(t['all_links'])}</a></p><p class="note">{E(t['more_books'])}</p></div></section>
 <section id="lavoro"><h2 class="reveal">{E(t['h_lavoro'])}</h2><p class="intro reveal">{E(t['lavoro_intro'])}</p><div class="grid4">{serv}</div>
 <h2 class="reveal sub2">{E(t['h_samples'])}</h2><p class="intro note reveal">{E(t['samples_note'])}</p><div class="samples">{samples}</div>
 <h2 class="reveal sub2">{E(t['h_come'])}</h2><ol class="steps">{steps}</ol></section>
@@ -64,7 +64,8 @@ def page(L):
 <a class="card reveal hov" href="mailto:aleg.auren@gmail.com"><span class="lbl">{E(cl[0])}</span><span dir="ltr">aleg.auren@gmail.com</span></a>
 <a class="card reveal hov" href="https://wa.me/qr/L4SHBNHXK6KGN1" target="_blank" rel="noopener"><span class="lbl">{E(cl[1])}</span>WhatsApp</a>
 <a class="card reveal hov" href="https://www.tiktok.com/@a_g.auren" target="_blank" rel="noopener"><span class="lbl">{E(cl[2])}</span><span dir="ltr">TikTok @a_g.auren</span></a>
-<a class="card reveal hov" href="https://ko-fi.com/alessio_g" target="_blank" rel="noopener"><span class="lbl">{E(cl[3])}</span>{E(t['c_coffee'])}</a></div></section>
+<a class="card reveal hov" href="https://ko-fi.com/alessio_g" target="_blank" rel="noopener"><span class="lbl">{E(cl[3])}</span>{E(t['c_coffee'])}</a>
+<a class="card reveal hov" href="https://linktr.ee/ale.ptdc" target="_blank" rel="noopener"><span class="lbl">{E(t['c_link'])}</span>Linktree</a></div></section>
 </main>
 <footer><p>© 2026 Alessio Gaetano · <a href="{R}privacy.html">{E(t['privacy'])}</a></p></footer>
 <button id="music" type="button" aria-pressed="false" data-on="{E(t['music_on'])}" data-off="{E(t['music_off'])}" data-aon="{E(t['music_aria_on'])}" data-aoff="{E(t['music_aria_off'])}"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="t">{E(t['music_off'])}</span></button>

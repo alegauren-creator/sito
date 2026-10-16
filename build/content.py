@@ -5,6 +5,7 @@ VIDEOS = ["7296091165361851681", "7295537006937902369", "7287906196969786657", "
 
 T = {}
 T['it'] = dict(
+ all_links='Tutti i miei libri e link', c_link='Link',
  lang='it', dir='ltr', path='', name='Italiano', short='IT',
  title='Alessio Gaetano – Scrittore, fotografo, filmmaker e copywriter',
  desc='Alessio Gaetano: Parole e Natura. Scrittore, fotografo, filmmaker e copywriter. Fotografie, video, poesie, pensieri, libri, consigli e contatti.',
@@ -43,6 +44,7 @@ T['it'] = dict(
  privacy='Privacy', close='Chiudi', prev='Precedente', next='Successiva',
 )
 T['en'] = dict(
+ all_links='All my books and links', c_link='Links',
  lang='en', dir='ltr', path='en/', name='English', short='EN',
  title='Alessio Gaetano – Writer, photographer, filmmaker and copywriter',
  desc='Alessio Gaetano: Words and Nature. Writer, photographer, filmmaker and copywriter. Photographs, videos, poems, thoughts, books, advice and contacts.',
@@ -80,6 +82,7 @@ T['en'] = dict(
  privacy='Privacy', close='Close', prev='Previous', next='Next',
 )
 T['fr'] = dict(
+ all_links='Tous mes livres et liens', c_link='Liens',
  lang='fr', dir='ltr', path='fr/', name='Français', short='FR',
  title='Alessio Gaetano – Écrivain, photographe, vidéaste et rédacteur',
  desc='Alessio Gaetano : Mots et Nature. Écrivain, photographe, vidéaste et rédacteur. Photographies, vidéos, poèmes, pensées, livres, conseils et contacts.',
@@ -117,6 +120,7 @@ T['fr'] = dict(
  privacy='Confidentialité', close='Fermer', prev='Précédente', next='Suivante',
 )
 T['ar'] = dict(
+ all_links='كل كتبي وروابطي', c_link='روابط',
  lang='ar', dir='rtl', path='ar/', name='العربية', short='AR',
  title='أليسيو غايتانو – كاتب ومصوّر وصانع أفلام وكاتب إعلانات',
  desc='أليسيو غايتانو: كلمات وطبيعة. كاتب ومصوّر وصانع أفلام وكاتب إعلانات. صور وفيديوهات وقصائد وأفكار وكتب ونصائح وتواصل.',
