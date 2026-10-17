@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 # CONTENUTI DEL SITO in tutte le lingue. Modifica qui e poi esegui: python3 build/build.py
 # Per aggiungere un "pensiero della settimana": aggiungi una riga in THOUGHTS (in ogni lingua, stessa posizione).
-VIDEOS = ["7296091165361851681", "7295537006937902369", "7287906196969786657", "7290464668324334880"]
+# Video: ID numerico = TikTok (si carica al clic); altrimenti file locale video/<nome>.mp4 con poster img/video-<nome>.jpg
+VIDEOS = ["7296091165361851681", "insieme-al-crepuscolo", "7287906196969786657", "un-gesto-gentile"]
 
 T = {}
 T['it'] = dict(
@@ -18,7 +19,7 @@ T['it'] = dict(
       "Scrivo da sempre: ho pubblicato dei libri che spaziano dalla spiritualità ai romanzi fantasy e alle poesie, nati dal desiderio di dare parole a ciò che si sente nel silenzio.",
       "Pratico la meditazione e coltivo la spiritualità in tutte le sue sfaccettature: credo in un benessere che unisce corpo, mente e cuore. Se cerchi un consiglio, una parola o semplicemente qualcuno con cui parlare, scrivimi."],
  h_foto='Fotografie', photo_alt='Fotografia di Alessio Gaetano',
- h_video='Video', video_intro='Piccoli film girati in natura: luce, silenzio e movimento.', video_play='Guarda il video', video_note='Il video si carica da TikTok solo quando lo avvii.', video_titles=['Montagne d’autunno','Larici dorati','Il pontile sul lago','Lago tra i pini'],
+ h_video='Video', video_intro='Piccoli film girati in natura: luce, silenzio e movimento.', video_play='Guarda il video', video_note='I video di TikTok si caricano solo quando li avvii.', video_titles=['Montagne d’autunno','Insieme al crepuscolo','Il pontile sul lago','Un gesto gentile'],
  h_poesie='Poesie', poem_note='', 
  h_pensieri='Pensieri', week_label='Pensiero della settimana', author='Alessio Gaetano',
  h_libri='Libri', book_t='Ritorno alla Sorgente', book_d='Un diario guidato per fermarsi, ascoltarsi e tornare a ciò che conta.', kofi='Scopri su Ko-fi', tiktok_follow='Seguimi su TikTok', more_books='Altri titoli in arrivo…',
@@ -56,7 +57,7 @@ T['en'] = dict(
       "I have always written: I have published books ranging from spirituality to fantasy novels and poetry, born from the wish to give words to what is felt in silence.",
       "I practise meditation and nurture spirituality in all its facets: I believe in a well-being that unites body, mind and heart. If you are looking for advice, a word or simply someone to talk to, write to me."],
  h_foto='Photographs', photo_alt='Photograph by Alessio Gaetano',
- h_video='Video', video_intro='Short films shot in nature: light, silence and movement.', video_play='Watch the video', video_note='The video loads from TikTok only when you start it.', video_titles=['Autumn mountains','Golden larches','The pier on the lake','Lake among the pines'],
+ h_video='Video', video_intro='Short films shot in nature: light, silence and movement.', video_play='Watch the video', video_note='TikTok videos load only when you start them.', video_titles=['Autumn mountains','Together at dusk','The pier on the lake','A kind gesture'],
  h_poesie='Poems', poem_note='Translation from the Italian',
  h_pensieri='Thoughts', week_label='Thought of the week', author='Alessio Gaetano',
  h_libri='Books', book_t='Ritorno alla Sorgente (Return to the Source)', book_d='A guided journal to pause, listen to yourself and return to what matters.', kofi='Discover on Ko-fi', tiktok_follow='Follow me on TikTok', more_books='More titles coming soon…',
@@ -94,7 +95,7 @@ T['fr'] = dict(
       "J’écris depuis toujours : j’ai publié des livres qui vont de la spiritualité aux romans fantasy et à la poésie, nés du désir de donner des mots à ce que l’on ressent dans le silence.",
       "Je pratique la méditation et je cultive la spiritualité sous toutes ses facettes : je crois en un bien-être qui unit le corps, l’esprit et le cœur. Si tu cherches un conseil, un mot ou simplement quelqu’un à qui parler, écris-moi."],
  h_foto='Photographies', photo_alt='Photographie d’Alessio Gaetano',
- h_video='Vidéo', video_intro='De petits films tournés dans la nature : lumière, silence et mouvement.', video_play='Voir la vidéo', video_note='La vidéo se charge depuis TikTok seulement quand tu la lances.', video_titles=['Montagnes d’automne','Mélèzes dorés','Le ponton sur le lac','Lac entre les pins'],
+ h_video='Vidéo', video_intro='De petits films tournés dans la nature : lumière, silence et mouvement.', video_play='Voir la vidéo', video_note='Les vidéos TikTok se chargent seulement quand tu les lances.', video_titles=['Montagnes d’automne','Ensemble au crépuscule','Le ponton sur le lac','Un geste bienveillant'],
  h_poesie='Poèmes', poem_note='Traduction de l’italien',
  h_pensieri='Pensées', week_label='Pensée de la semaine', author='Alessio Gaetano',
  h_libri='Livres', book_t='Ritorno alla Sorgente (Retour à la Source)', book_d='Un journal guidé pour s’arrêter, s’écouter et revenir à l’essentiel.', kofi='Découvrir sur Ko-fi', tiktok_follow='Suis-moi sur TikTok', more_books='D’autres titres arrivent bientôt…',
@@ -132,7 +133,7 @@ T['ar'] = dict(
       'أكتب منذ الأزل: نشرتُ كتبًا تتنوّع بين الروحانيات وروايات الخيال والشعر، وُلدت من الرغبة في منح الكلمات لما نشعر به في الصمت.',
       'أمارس التأمل وأنمّي الروحانية بكل جوانبها: أؤمن برفاهية تجمع بين الجسد والعقل والقلب. إن كنت تبحث عن نصيحة أو كلمة أو ببساطة عن شخص تتحدث إليه، فاكتب لي.'],
  h_foto='الصور', photo_alt='صورة بعدسة أليسيو غايتانو',
- h_video='فيديو', video_intro='أفلام قصيرة صُوّرت في الطبيعة: نور وصمت وحركة.', video_play='شاهد الفيديو', video_note='يُحمَّل الفيديو من تيك توك فقط عندما تشغّله.', video_titles=['جبال الخريف','أشجار اللاريس الذهبية','الرصيف على البحيرة','بحيرة بين أشجار الصنوبر'],
+ h_video='فيديو', video_intro='أفلام قصيرة صُوّرت في الطبيعة: نور وصمت وحركة.', video_play='شاهد الفيديو', video_note='تُحمَّل فيديوهات تيك توك فقط عندما تشغّلها.', video_titles=['جبال الخريف','معًا عند الغسق','الرصيف على البحيرة','لفتة لطيفة'],
  h_poesie='قصائد', poem_note='ترجمة عن الإيطالية',
  h_pensieri='أفكار', week_label='فكرة الأسبوع', author='أليسيو غايتانو',
  h_libri='كتب', book_t='Ritorno alla Sorgente (العودة إلى النبع)', book_d='دفتر يوميات موجَّه للتوقف والإصغاء إلى نفسك والعودة إلى ما يهم.', kofi='اكتشفه على Ko-fi', tiktok_follow='تابعني على تيك توك', more_books='عناوين أخرى قريبًا…',

@@ -16,7 +16,10 @@ def page(L):
   nav=''.join(f'<a href="#{i}">{E(n)}</a>' for i,n in zip(IDS,t['nav']))
   bio=''.join(f'<p>{E(p)}</p>' for p in t['bio'])
   gal=''.join(f'<a class="ph reveal" href="{R}img/foto-{i:02d}.jpg"><img src="{R}img/thumb-{i:02d}.jpg" alt="{E(t["photo_alt"])} {i}" loading="lazy" width="600" height="800"></a>' for i in range(1,N_PHOTOS+1))
-  vids=''.join(f'<figure class="vid reveal"><button class="vfacade" type="button" data-id="{v}" aria-label="{E(t["video_play"])}: {E(tt)}"><img src="{R}img/video-{v}.jpg" alt="{E(tt)}" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption>{E(tt)}</figcaption></figure>' for v,tt in zip(C.VIDEOS,t['video_titles']))
+  def vcard(v,tt):
+    if v.isdigit(): return f'<figure class="vid reveal"><button class="vfacade" type="button" data-id="{v}" aria-label="{E(t["video_play"])}: {E(tt)}"><img src="{R}img/video-{v}.jpg" alt="{E(tt)}" loading="lazy"><span class="play" aria-hidden="true"></span></button><figcaption>{E(tt)}</figcaption></figure>'
+    return f'<figure class="vid reveal"><div class="vlocal"><video src="{R}video/{v}.mp4" poster="{R}img/video-{v}.jpg" controls playsinline preload="none" aria-label="{E(tt)}"></video><button class="play" type="button" aria-label="{E(t["video_play"])}: {E(tt)}"></button></div><figcaption>{E(tt)}</figcaption></figure>'
+  vids=''.join(vcard(v,tt) for v,tt in zip(C.VIDEOS,t['video_titles']))
   poems=''
   for p in C.POEMS[L]:
     st=''.join('<div class="stanza reveal">'+''.join(f'<p>{E(l)}</p>' for l in s)+'</div>' for s in p['stanzas'])
@@ -38,7 +41,7 @@ def page(L):
 <meta property="og:type" content="website"><meta property="og:url" content="{url}"><meta property="og:title" content="Alessio Gaetano – {E(t['sub'])}"><meta property="og:description" content="{E(t['ogdesc'])}"><meta property="og:image" content="{SITE}og.jpg"><meta property="og:locale" content="{dict(it='it_IT',en='en_US',fr='fr_FR',ar='ar_AR')[L]}"><meta name="twitter:card" content="summary_large_image">
 <meta name="google-site-verification" content="P_0KU-tFi58tV74n-cSzLczwnLbSxpIiYvnmhs9SNok" />
 <script type="application/ld+json">{json.dumps(ld,ensure_ascii=False)}</script><script type="application/ld+json">{json.dumps(ws,ensure_ascii=False)}</script>
-<link rel="stylesheet" href="{R}fonts/fonts.css"><link rel="stylesheet" href="{R}style.css?v=7">
+<link rel="stylesheet" href="{R}fonts/fonts.css"><link rel="stylesheet" href="{R}style.css?v=8">
 <script>window.SITE_BASE="{R}";window.SITE_LANG="{L}";</script></head><body>
 <nav><a href="#top" class="brand">Alessio Gaetano</a><div class="links">{nav}</div><div class="langs" role="group" aria-label="{E(t['langlabel'])}">{langsw}</div><button id="menu" aria-label="{E(t['menu'])}">☰</button></nav>
 <header id="top" class="hero"><div class="hero-bg"></div><canvas id="herorain" aria-hidden="true"></canvas><h1 class="reveal">Alessio Gaetano</h1><p class="sub reveal">{E(t['sub'])}</p><p class="roles reveal">{E(t['roles'])}</p><div class="reveal"><a class="btn" href="#chi">{E(t['more'])}</a> <a class="btn ghost" href="#lavoro">{E(t['work'])}</a></div></header>
@@ -70,7 +73,7 @@ def page(L):
 <footer><p>© 2026 Alessio Gaetano · <a href="{R}privacy.html">{E(t['privacy'])}</a></p></footer>
 <button id="music" type="button" aria-pressed="false" data-on="{E(t['music_on'])}" data-off="{E(t['music_off'])}" data-aon="{E(t['music_aria_on'])}" data-aoff="{E(t['music_aria_off'])}"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="t">{E(t['music_off'])}</span></button>
 <div id="lb" hidden><button id="lbx" aria-label="{E(t['close'])}">×</button><button id="lbp" aria-label="{E(t['prev'])}">‹</button><img alt=""><button id="lbn" aria-label="{E(t['next'])}">›</button></div>
-<script src="{R}main.js?v=3"></script><script src="{R}rain.js?v=5"></script><script src="{R}music.js?v=3"></script></body></html>'''
+<script src="{R}main.js?v=5"></script><script src="{R}rain.js?v=5"></script><script src="{R}music.js?v=3"></script></body></html>'''
 for L in LANGS:
   d=ROOT+'/'+C.T[L]['path'];os.makedirs(d,exist_ok=True);open(d+'index.html','w').write(page(L))
 alts=''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{SITE+C.T[l]["path"]}"/>' for l in LANGS)+f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}"/>'

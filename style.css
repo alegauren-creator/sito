@@ -69,7 +69,7 @@ h2.sub2{font-size:clamp(1.8rem,3.4vw,2.4rem);margin-top:5rem}
 .langs{display:flex;gap:.2rem;margin-left:1.4rem}.langs a{font-size:.7rem;letter-spacing:.12em;text-decoration:none;color:inherit;opacity:.65;padding:.25rem .45rem;border:1px solid transparent;border-radius:2px;font-weight:500}.langs a:hover{opacity:1}.langs a[aria-current]{opacity:1;border-color:currentColor}
 nav .links{margin-left:auto}
 .videos{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.2rem}.vid{margin:0}.vid figcaption{text-align:center;font-family:"Cormorant Garamond",serif;font-size:1.2rem;margin-top:.6rem;color:var(--deep)}
-.vfacade,.vframe{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:4px;overflow:hidden;position:relative;padding:0;cursor:pointer;background:var(--deep);box-shadow:0 20px 50px -30px rgba(11,47,56,.6)}
+.vfacade,.vframe,.vlocal{display:block;width:100%;aspect-ratio:9/16;border:0;border-radius:4px;overflow:hidden;position:relative;padding:0;cursor:pointer;background:var(--deep);box-shadow:0 20px 50px -30px rgba(11,47,56,.6)}
 .vfacade img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 1s,filter .6s;filter:brightness(.85)}.vfacade:hover img{transform:scale(1.04);filter:brightness(.7)}
 .play{position:absolute;left:50%;top:50%;width:64px;height:64px;margin:-32px 0 0 -32px;border-radius:50%;background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.7);backdrop-filter:blur(6px)}.play:after{content:"";position:absolute;left:26px;top:20px;border-left:16px solid #fff;border-top:12px solid transparent;border-bottom:12px solid transparent}
 .week{max-width:780px;margin:0 auto 2rem;text-align:center;background:linear-gradient(135deg,var(--teal),#2f7f86);color:#fff;border:0}.week .lbl{color:var(--aqua2)}.weekq{font-family:"Cormorant Garamond",serif;font-style:italic;font-size:1.6rem;line-height:1.5;margin:.4rem 0 0}
@@ -97,3 +97,5 @@ html[dir=rtl] .langs a{font-family:Inter,sans-serif}
 @media(max-width:900px){html[dir=rtl] .langs{margin-right:auto;margin-left:.6rem}html[dir=rtl] .links a{margin:.6rem 0}}
 .cform,.cform .row,.cform label{min-width:0}.cform input,.cform select,.cform textarea{width:100%;min-width:0;box-sizing:border-box}
 html,body{overflow-x:hidden}
+
+.vlocal{cursor:default}.vlocal video{width:100%;height:100%;object-fit:cover;display:block;background:var(--deep)}.vlocal .play{cursor:pointer;padding:0;transition:opacity .4s,transform .4s}.vlocal .play:hover{transform:scale(1.08)}.vlocal.playing .play{opacity:0;pointer-events:none}

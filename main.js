@@ -19,6 +19,8 @@ addEventListener('keydown',e=>{if(lb.hidden)return;if(e.key=='Escape')lb.hidden=
 document.getElementById('weekq').textContent='“'+L[(u.getUTCFullYear()*53+w)%L.length]+'”'})();
 // video TikTok: si carica solo al clic (nessun cookie di terze parti prima)
 document.querySelectorAll('.vfacade').forEach(b=>b.addEventListener('click',()=>{const f=document.createElement('iframe');f.src='https://www.tiktok.com/player/v1/'+b.dataset.id+'?autoplay=1&rel=0&description=0&music_info=0';f.allow='autoplay; fullscreen; encrypted-media';f.allowFullscreen=true;f.title=b.getAttribute('aria-label');f.className='vframe';b.replaceWith(f)}));
+// video ospitati sul sito: pulsante play elegante sopra i controlli nativi
+document.querySelectorAll('.vlocal').forEach(w=>{const v=w.querySelector('video'),p=w.querySelector('.play');v.controls=false;p.onclick=()=>{v.controls=true;v.play()};v.addEventListener('play',()=>{v.controls=true;w.classList.add('playing');document.querySelectorAll('.vlocal video').forEach(o=>o!==v&&o.pause())});v.addEventListener('pause',()=>w.classList.remove('playing'))});
 // respiro guidato: 6 cicli da 10 s (4 inspira, 6 espira) = 1 minuto
 (()=>{const w=document.querySelector('.breath');if(!w)return;const c=w.querySelector('.circle'),l=w.querySelector('.bl'),btn=document.getElementById('breathbtn');let tm=[],on=false;
 const stop=(done)=>{tm.forEach(clearTimeout);tm=[];on=false;c.className='circle';l.textContent=done?w.dataset.done:'';btn.textContent=w.dataset.start};
