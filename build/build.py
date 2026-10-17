@@ -73,7 +73,7 @@ def page(L):
 <footer><p>© 2026 Alessio Gaetano · <a href="{R}privacy.html">{E(t['privacy'])}</a></p></footer>
 <button id="music" type="button" aria-pressed="false" data-on="{E(t['music_on'])}" data-off="{E(t['music_off'])}" data-aon="{E(t['music_aria_on'])}" data-aoff="{E(t['music_aria_off'])}"><span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span><span class="t">{E(t['music_off'])}</span></button>
 <div id="lb" hidden><button id="lbx" aria-label="{E(t['close'])}">×</button><button id="lbp" aria-label="{E(t['prev'])}">‹</button><img alt=""><button id="lbn" aria-label="{E(t['next'])}">›</button></div>
-<script src="{R}main.js?v=5"></script><script src="{R}rain.js?v=5"></script><script src="{R}music.js?v=3"></script></body></html>'''
+<script src="{R}main.js?v=5"></script><script src="{R}rain.js?v=5"></script><script src="{R}music.js?v=4"></script></body></html>'''
 for L in LANGS:
   d=ROOT+'/'+C.T[L]['path'];os.makedirs(d,exist_ok=True);open(d+'index.html','w').write(page(L))
 alts=''.join(f'<xhtml:link rel="alternate" hreflang="{l}" href="{SITE+C.T[l]["path"]}"/>' for l in LANGS)+f'<xhtml:link rel="alternate" hreflang="x-default" href="{SITE}"/>'
