@@ -27,4 +27,4 @@ const stop=(done)=>{tm.forEach(clearTimeout);tm=[];on=false;c.className='circle'
 btn.onclick=()=>{if(on)return stop();on=true;btn.textContent=w.dataset.stop;for(let i=0;i<6;i++){tm.push(setTimeout(()=>{c.className='circle in';l.textContent=w.dataset.in},i*10000));tm.push(setTimeout(()=>{c.className='circle out';l.textContent=w.dataset.out},i*10000+4000))}tm.push(setTimeout(()=>stop(true),60000))}})();
 // modulo contatti: compone una email (nessun backend)
 (()=>{const f=document.getElementById('cform');if(!f)return;f.onsubmit=e=>{e.preventDefault();const v=n=>f.elements[n].value.trim();
-const body=`${f.dataset.hello}\n\n${v('msg')}\n\n— ${v('name')}\n${v('email')}`;location.href='mailto:aleg.auren@gmail.com?subject='+encodeURIComponent(f.dataset.subject+' – '+v('type'))+'&body='+encodeURIComponent(body)}})();
+const body=`${f.dataset.hello}\n\n${v('msg')}\n\n— ${v('name')}\n${v('email')}`;location.href='mailto:'+['aleg','auren'].join('.')+String.fromCharCode(64)+'gmail.com?subject='+encodeURIComponent(f.dataset.subject+' – '+v('type'))+'&body='+encodeURIComponent(body)}})();
